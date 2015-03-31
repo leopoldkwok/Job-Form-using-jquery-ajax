@@ -13,19 +13,19 @@
   $message=$_POST["message"];
 
   //storing file in filename variable
-    $fileName = $_FILES['file']['name'];
-    //destination directory
-    $to="resume/".$fileName;
+  $fileName = $_FILES['file']['name'];
+  //destination directory
+  $to="resume/".$fileName; // make sure you create this folder
 
-    move_uploaded_file($_FILES['file']['tmp_name'],$to);
+  move_uploaded_file($_FILES['file']['tmp_name'],$to);
 
   $query=mysql_query("INSERT INTO common(firstname,lastname, email, phonenumber, message, destination) values('$firstname','$lastname','$email','$phonenumber', '$message', '$to') ");
 
   if($query){
-    echo "Your comment has been sent";
+    echo "Success! Your details was successfully added! Thank you for sending your details.";
   }
   else{
-    echo "Error in sending your comment";
+    echo "Error in sending your details";
   }
 
 ?>
