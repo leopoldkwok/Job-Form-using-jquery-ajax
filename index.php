@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+  <title></title>
 </head>
 <body>
-<!-- 
-process.php -->
 
-		<form name="multiform" id="multiform" action="process.php" method="POST" enctype="multipart/form-data">
+
+    <form name="multiform" id="multiform" action="process.php" method="POST" enctype="multipart/form-data">
               First Name : <input type="text" name="firstname" id="firstname" placeholder="First Name" />
               </br>
               Last Name : <input type="text" name="lastname" id="lastname" placeholder="Last Name" />
@@ -21,11 +20,12 @@ process.php -->
               Resume : <input type="file" name="file" id="file" />
               <br />
               
+              <input type="submit" id="multi-post" value="Submit"></input>
+              
         </form>
-               <input  type="button" id="multi-post" value="Submit"></input>
                <div id="multi-msg"></div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="script/my_script.js" type="text/javascript"></script>
+<!-- <script src="script/my_script.js" type="text/javascript"></script> -->
 </body>
 </html>

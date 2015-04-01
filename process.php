@@ -1,7 +1,8 @@
 <?php
 
-
-
+// $firstname = ""; 
+// $firstnameError = "";
+// $errors = 0;
 // remove php error messages
   error_reporting(E_ALL ^ E_DEPRECATED);
 
@@ -14,12 +15,22 @@
   $phonenumber=$_POST["phonenumber"];
   $message=$_POST["message"];
 
+
   //storing file in filename variable
   $fileName = $_FILES['file']['name'];
+
+if(empty($firstname))
+  {
+    echo "Username and Password are mandatory - from PHP!";
+    exit();
+  
+  }
+
   //destination directory
   $to="resume/".$fileName; // make sure you create this folder
 
-  move_uploaded_file($_FILES['file']['tmp_name'],$to);
+  move_uploaded_file($_FILES['file']['tmp_name'],$to); //Moves an uploaded file to a new location
+
 
   $query=mysql_query("INSERT INTO common(firstname,lastname, email, phonenumber, message, destination) values('$firstname','$lastname','$email','$phonenumber', '$message', '$to') ");
 
