@@ -4,17 +4,19 @@
 	<title></title>
 </head>
 <body>
+<!-- 
+process.php -->
 
 		<form name="multiform" id="multiform" action="process.php" method="POST" enctype="multipart/form-data">
-              First Name : <input type="text" name="firstname" id="firstname"/>
+              First Name : <input type="text" name="firstname" id="firstname" placeholder="First Name" />
               </br>
-              Last Name : <input type="text" name="lastname" id="lastname" />
+              Last Name : <input type="text" name="lastname" id="lastname" placeholder="Last Name" />
               </br>
-              Email: <input type="text" name="email" id="email"  />
+              Email: <input type="text" name="email" id="email" placeholder="Email" />
               <br />
-              Phone Number: <input type="text" name="phonenumber" id="phonenumber" />
+              Phone Number: <input type="text" name="phonenumber" id="phonenumber" placeholder="Phone number" />
               <br />
-              Message: <textarea rows="5" cols="40" input type="text" name="message" id="message"/></textarea>
+              Message: <textarea rows="5" cols="40" input type="text" name="message" id="message" placeholder="Message"/></textarea>
               <br />
               Resume : <input type="file" name="file" id="file" />
               <br />

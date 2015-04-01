@@ -1,7 +1,9 @@
 <?php
 
+
+
 // remove php error messages
- error_reporting(E_ALL ^ E_DEPRECATED);
+  error_reporting(E_ALL ^ E_DEPRECATED);
 
   mysql_connect("localhost","root","");
   mysql_select_db("test1_ajax");

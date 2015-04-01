@@ -9,7 +9,7 @@ if(window.FormData !== undefined)
     {
         var formData = new FormData(this);
         $.ajax({
-            url: formURL,
+            url: formURL, //formURL
             type: 'POST',
             data:  formData,
             mimeType:"multipart/form-data",
