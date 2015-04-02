@@ -1,13 +1,23 @@
 <?php
 
-// $firstname = ""; 
-// $firstnameError = "";
-// $errors = 0;
-// remove php error messages
+
   error_reporting(E_ALL ^ E_DEPRECATED);
 
   mysql_connect("localhost","root","");
   mysql_select_db("test1_ajax");
+
+validate_email($email) {
+    if (empty($email) ||  !filter_var($email, FILTER_VALIDATE_EMAIL) === false) 
+      {
+        return false;
+    }
+
+    else {
+
+      return true;
+    }
+ } 
+  
 
   $firstname=$_POST["firstname"];
   $lastname=$_POST["lastname"];
@@ -19,18 +29,26 @@
   //storing file in filename variable
   $fileName = $_FILES['file']['name'];
 
-if(empty($firstname))
+if(empty($firstname) || empty($lastname) || empty($email) || empty($phonenumber))
   {
-    echo "Username and Password are mandatory - from PHP!";
+    echo "These fields are mandatory - from PHP!";
     exit();
   
   }
+
+
+  validate_email($email);
+
+  if (validate_email($email) == false)
+  {
+    echo "Email not valid";
+    exit();
+  } 
 
   //destination directory
   $to="resume/".$fileName; // make sure you create this folder
 
   move_uploaded_file($_FILES['file']['tmp_name'],$to); //Moves an uploaded file to a new location
-
 
   $query=mysql_query("INSERT INTO common(firstname,lastname, email, phonenumber, message, destination) values('$firstname','$lastname','$email','$phonenumber', '$message', '$to') ");
 

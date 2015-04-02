@@ -6,14 +6,15 @@ $("#multiform").submit(function(e) {
     
     //if the firstname input or lastname or email or phone number or no file upload then display a message and do not submit anything
     if($("#firstname").val() == "" || $("#lastname").val() == "" || $("#email").val() == "" || $("#phonenumber").val() == "" || $("#file").val() == "")
-        $("#multi-msg").html("There are mandatory field(s) that you have missed out -- Please enter");
+        $("#multi-msg").html("There are mandatory field(s) that you have missed out. <br> Please ensure you have entered the following: first name, last name, email, phone number and uploaded your resume");
     else {
 
 
 
     var formObj = $(this);
-console.log();
-    var formURL = formObj.attr("action");
+    // console.log(formObj);
+    var formURL = $("#multiform").attr("action");
+    // formObj.attr("action");
 
 if(window.FormData !== undefined)  
     {
@@ -43,11 +44,11 @@ if(window.FormData !== undefined)
     }
    return false;
 });
-$("#multi-post").click(function()
-    {
-    //sending form from here
-    $("#multiform").submit();
-});
+// $("#multi-post").click(function()
+//     {
+//     //sending form from here
+//     $("#multiform").submit();
+// });
 
 });
 
