@@ -6,17 +6,17 @@
   mysql_connect("localhost","root","");
   mysql_select_db("test1_ajax");
 
-validate_email($email) {
-    if (empty($email) ||  !filter_var($email, FILTER_VALIDATE_EMAIL) === false) 
-      {
-        return false;
-    }
+// validate_email($email) {
+//     if (empty($email) ||  !filter_var($email, FILTER_VALIDATE_EMAIL) === false) 
+//       {
+//         return false;
+//     }
 
-    else {
+//     else {
 
-      return true;
-    }
- } 
+//       return true;
+//     }
+//  } 
   
 
   $firstname=$_POST["firstname"];
@@ -37,13 +37,13 @@ if(empty($firstname) || empty($lastname) || empty($email) || empty($phonenumber)
   }
 
 
-  validate_email($email);
+  // validate_email($email);
 
-  if (validate_email($email) == false)
-  {
-    echo "Email not valid";
-    exit();
-  } 
+  // if (validate_email($email) == false)
+  // {
+  //   echo "Email not valid";
+  //   exit();
+  // } 
 
 
 
